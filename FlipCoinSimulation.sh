@@ -2,20 +2,24 @@
 #
 #Welcome to flip coin simulation Program on Master #Branch
 #
-
 echo ""
 echo "Welcome to Flip Coin Simulation Program "
 echo "This problem displays the winner Heads or Tails"
 echo ""
 
+#As a simulator, loop through Multiple times of flipping a coin and show number of times head and tail has won
 
-#As a Simulator, start with Flipping a Coin to Display Heads or Tails as winner
- 
-flip=$((RANDOM%2))
+ for (( i = 0; i<=5 ; i++ )); do
+ 	flip=$((RANDOM%2))
+ 	if [[ ${flip} -eq 0 ]]; then
+ 		echo HEADS
+ 		h=$((h+1))
+ 	elif [[ ${flip} -eq 1 ]]; then
+ 		echo TAILS
+ 		t=$((t+1))
+ 	fi
+ 	echo " HEADS : $h times     TAILS : $t times"
 
-if [[ ${flip} -eq 0 ]]; then
-	echo HEADS
-elif [[ ${flip} -eq 1 ]]; then
-	echo TAILS
-fi
-echo ""
+ done
+
+ echo ""
